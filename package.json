@@ -1,12 +1,11 @@
 {
-  "name": "grunt-line-number-plugin",
-  "description": "Ye olde c style \"__LINE__\" replacer.",
-  "version": "0.1.1",
+  "name": "grunt-console-line-number-plugin",
+  "description": "Adds file source and line number to console log statements.",
+  "version": "0.1.2",
   "homepage": "https://github.com/sne11ius/grunt-line-number-plugin",
   "author": {
-    "name": "Cornelius Lilge",
-    "email": "cornelius.lilge@gmail.com",
-    "url": "http://wasis.nu"
+    "name": "Michael Rawdon",
+    "email": "mrawdon@gmail.com"
   },
   "repository": {
     "type": "git",
@@ -18,7 +17,7 @@
   "licenses": [
     {
       "type": "GPL-3.0",
-      "url": "https://github.com/sne11ius/grunt-line-number-plugin/blob/master/LICENSE"
+      "url": "https://github.com/mrawdon/grunt-line-number-plugin"
     }
   ],
   "engines": {
