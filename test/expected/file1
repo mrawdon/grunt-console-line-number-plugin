@@ -1,8 +1,4 @@
-1
-2
-3
-4
-5LINE__
-6
-77
-8
+dsasdadas
+console.log('test/fixtures/file1:2','sdadsadas');
+console.warn('test/fixtures/file1:3','sdadsadas');
+/*Some comment*/console.info('test/fixtures/file1:4','sdadsadas');

@@ -42,12 +42,18 @@ module.exports = function (grunt) {
                 }
                 grunt.log.writeln(src + ' -> ' + dest);
 
-                var lineNum = 1,
+                var lineNumber = 1,
                     result = '',
-                    re = new RegExp('__LINE__', 'g');
+                    re = new RegExp('console\\.(log|warn|info)\\(');
                 //noinspection JSUnresolvedFunction
-                require('fs').readFileSync(src).toString().split(/\r?\n/).forEach(function(line){
-                    result +=  line.replace(re, lineNum++) + grunt.util.linefeed;
+				require('fs').readFileSync(src).toString().split(/\r?\n/).forEach(function(line){
+                    var match = line.match(re);
+					if(match){
+						result +=  line.replace(match[0], match[0]+"'"+src+':'+lineNumber+"',") + grunt.util.linefeed;
+					}else{
+						result +=  line + grunt.util.linefeed;
+					}
+					lineNumber++;
                 });
                 grunt.file.write(dest, result.trim() + grunt.util.linefeed);
             }

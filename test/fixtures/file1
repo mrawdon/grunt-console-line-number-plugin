@@ -1,8 +1,4 @@
-1
-2
-__LINE__
-4
-__LINE__LINE__
-6
-__LINE____LINE__
-8
+dsasdadas
+console.log('sdadsadas');
+console.warn('sdadsadas');
+/*Some comment*/console.info('sdadsadas');
