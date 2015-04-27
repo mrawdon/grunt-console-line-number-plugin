@@ -2,22 +2,22 @@
   "name": "grunt-console-line-number-plugin",
   "description": "Adds file source and line number to console log statements.",
   "version": "0.1.2",
-  "homepage": "https://github.com/sne11ius/grunt-line-number-plugin",
+  "homepage": "https://github.com/mrawdon/grunt-console-line-number-plugin",
   "author": {
     "name": "Michael Rawdon",
     "email": "mrawdon@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sne11ius/grunt-line-number-plugin.git"
+    "url": "https://github.com/mrawdon/grunt-console-line-number-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/sne11ius/grunt-line-number-plugin/issues"
+    "url": "https://github.com/mrawdon/grunt-console-line-number-plugin/issues"
   },
   "licenses": [
     {
       "type": "GPL-3.0",
-      "url": "https://github.com/mrawdon/grunt-line-number-plugin"
+      "url": "https://github.com/mrawdon/grunt-console-line-number-plugin"
     }
   ],
   "engines": {
