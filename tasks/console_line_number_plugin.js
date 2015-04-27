@@ -1,6 +1,6 @@
 /*
- * grunt-line-number-plugin
- * https://github.com/sne11ius/grunt-line-number-plugin
+ * grunt-console-line-number-plugin
+ * https://github.com/mrawdon/grunt-console-line-number-plugin
  *
  * Copyright (c) 2014 Cornelius Lilge
  * Licensed under the GPL-3.0 license.
@@ -11,7 +11,7 @@
 module.exports = function (grunt) {
 
 
-    grunt.registerMultiTask('line_number_plugin', 'Ye olde c style "__file__" replacer.', function () {
+    grunt.registerMultiTask('console_line_number_plugin', 'Adds source file and line to console log statements.', function () {
 		this.files.forEach(function (f) {
             if (!f.src || !f.src.length) {
                 grunt.log.error(JSON.stringify(f));
