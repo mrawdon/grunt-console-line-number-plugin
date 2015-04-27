@@ -12,8 +12,7 @@ module.exports = function (grunt) {
 
 
     grunt.registerMultiTask('line_number_plugin', 'Ye olde c style "__file__" replacer.', function () {
-		console.log(this);
-        this.files.forEach(function (f) {
+		this.files.forEach(function (f) {
             if (!f.src || !f.src.length) {
                 grunt.log.error(JSON.stringify(f));
                 grunt.log.error('Must give source file.');
