@@ -28,8 +28,8 @@ module.exports = function (grunt) {
 
         line_number_plugin: {
             files: {
-                src: ['test/fixtures/file1'],
-                dest: ['tmp/file1']
+                src: ['test/fixtures/*'],
+                dest: 'tmp/'
             }
         },
 

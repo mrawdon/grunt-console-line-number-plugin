@@ -24,14 +24,16 @@ module.exports = function (grunt) {
                 grunt.log.error('Must give dest file.');
                 return false;
             }
-            if (f.src.length !== f.dest.length) {
+            /*if (f.src.length !== f.dest.length) {
                 grunt.log.error(JSON.stringify(f));
                 grunt.log.error('Must give exactly one destination per source file.');
                 return false;
-            }
-            for (var i = 0; i < f.src.length; ++i) {
-                var src = f.src[i],
-                    dest = f.dest[i];
+            }*/
+			for (var i = 0; i < f.src.length; ++i) {
+                
+				var src = f.src[i],
+					filename = src.substring(src.lastIndexOf('/')+1),
+                    dest = f.dest + filename;
                 if (!grunt.file.exists(src)) {
                     grunt.log.warn('Source does not exist: ' + src);
                     continue;
