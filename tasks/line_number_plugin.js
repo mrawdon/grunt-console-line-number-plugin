@@ -44,7 +44,7 @@ module.exports = function (grunt) {
 
                 var lineNumber = 1,
                     result = '',
-                    re = new RegExp('console\\.(log|warn|info)\\(');
+                    re = new RegExp('console\\.(log|warn|info|error|trace|debug)\\(');
                 //noinspection JSUnresolvedFunction
 				require('fs').readFileSync(src).toString().split(/\r?\n/).forEach(function(line){
                     var match = line.match(re);
