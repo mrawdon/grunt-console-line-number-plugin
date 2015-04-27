@@ -33,7 +33,7 @@ module.exports = function (grunt) {
                 
 				var src = f.src[i],
 					filename = src.substring(src.lastIndexOf('/')+1),
-                    dest = f.dest + filename;
+                    dest = f.dest + src;
                 if (!grunt.file.exists(src)) {
                     grunt.log.warn('Source does not exist: ' + src);
                     continue;

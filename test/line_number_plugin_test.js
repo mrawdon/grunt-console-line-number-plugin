@@ -29,11 +29,11 @@ exports.line_number_plugin = {
   simple_test: function(test) {
     test.expect(2);
 
-    var actual = grunt.file.read('tmp/file1');
+    var actual = grunt.file.read('tmp/test/fixtures/file1');
     var expected = grunt.file.read('test/expected/file1');
     test.equal(actual, expected, 'Should replace "__LINE__" with the current line number.');
 
-	var actual2 = grunt.file.read('tmp/file2');
+	var actual2 = grunt.file.read('tmp/test/fixtures/file2');
     var expected2 = grunt.file.read('test/expected/file2');
     test.equal(actual2, expected2, 'Should replace "__LINE__" with the current line number.');
 
