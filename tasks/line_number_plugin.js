@@ -10,8 +10,7 @@
 
 module.exports = function (grunt) {
 
-
-    grunt.registerMultiTask('line_number_plugin', 'Ye olde c style "__file__" replacer.', function () {
+	grunt.registerMultiTask('line_number_plugin', 'Ye olde c style "__file__" replacer.', function () {
 		this.files.forEach(function (f) {
             if (!f.src || !f.src.length) {
                 grunt.log.error(JSON.stringify(f));
@@ -44,12 +43,18 @@ module.exports = function (grunt) {
 
                 var lineNumber = 1,
                     result = '',
-                    re = new RegExp('console\\.(log|warn|info|error|trace|debug)\\(');
+                    re = new RegExp('(console\\.(log|warn|info|error|trace|debug)\\()([^;]+);');
                 //noinspection JSUnresolvedFunction
 				require('fs').readFileSync(src).toString().split(/\r?\n/).forEach(function(line){
                     var match = line.match(re);
 					if(match){
-						result +=  line.replace(match[0], match[0]+"'"+src+':'+lineNumber+"',") + grunt.util.linefeed;
+						//0 everything, 1 console.log, 2 log 3 message
+						var logDetail = "'"+src+':'+lineNumber+"'";
+						var replacement = match[1]+logDetail+",";
+						if(f.customLogger){
+							replacement = f.customLogger+'.'+match[2]+"("+logDetail+','+match[3]+';'+replacement;
+						}
+						result +=  line.replace(match[1], replacement) + grunt.util.linefeed;
 					}else{
 						result +=  line + grunt.util.linefeed;
 					}
