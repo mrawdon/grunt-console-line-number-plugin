@@ -12,7 +12,7 @@ module.exports = function (grunt) {
 
 
     grunt.registerMultiTask('line_number_plugin', 'Ye olde c style "__file__" replacer.', function () {
-
+		console.log(this);
         this.files.forEach(function (f) {
             if (!f.src || !f.src.length) {
                 grunt.log.error(JSON.stringify(f));
@@ -32,8 +32,7 @@ module.exports = function (grunt) {
 			for (var i = 0; i < f.src.length; ++i) {
                 
 				var src = f.src[i],
-					filename = src.substring(src.lastIndexOf('/')+1),
-                    dest = f.dest + src;
+					filename = src.substring(src.lastIndexOf('/')+1);
                 if (!grunt.file.exists(src)) {
                     grunt.log.warn('Source does not exist: ' + src);
                     continue;
@@ -42,7 +41,7 @@ module.exports = function (grunt) {
                     grunt.log.warn('Source is not a file: ' + src);
                     continue;
                 }
-                grunt.log.writeln(src + ' -> ' + dest);
+                grunt.log.writeln(src + ' -> ' + f.dest);
 
                 var lineNumber = 1,
                     result = '',
@@ -57,7 +56,7 @@ module.exports = function (grunt) {
 					}
 					lineNumber++;
                 });
-                grunt.file.write(dest, result.trim() + grunt.util.linefeed);
+                grunt.file.write(f.dest, result.trim() + grunt.util.linefeed);
             }
         });
     });
