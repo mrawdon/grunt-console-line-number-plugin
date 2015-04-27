@@ -1,5 +1,5 @@
 /*
- * grunt-line-number-plugin
+ * grunt-console-line-number-plugin
  * https://github.com/sne11ius/grunt-line-number-plugin
  *
  * Copyright (c) 2014 Cornelius Lilge
